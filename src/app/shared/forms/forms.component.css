@@ -1,0 +1,12 @@
+.custom-form-label {
+    font-family: 'Nunito-Bold';
+    margin-bottom: 0;
+}
+
+.custom-form-control {
+    margin-bottom: 0;
+}
+
+.text-error {
+    color: var(--events-failure);
+}

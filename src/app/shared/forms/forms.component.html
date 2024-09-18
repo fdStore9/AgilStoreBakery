@@ -1,0 +1,34 @@
+<form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div class="row">
+            @for (input of ListForms; track $index) {
+            <div [class]="input.class + ' mb-1'">
+                <label class="form-label custom-form-label" [for]="input.name">
+                    {{ input.title }}
+                </label>
+                <div class="input-group">
+                    <span class="input-group-text" *ngIf="input.type !== 'select'">
+                        <i [ngClass]="'bi ' + input.icon"></i>
+                    </span>
+                    <input *ngIf="input.type !== 'select'" [type]="input.type" [formControlName]="input.name"
+                        [placeholder]="input.placeholder" class="form-control custom-form-control" />
+                    <select *ngIf="input.type === 'select'" class="form-select custom-form-control"
+                        [formControlName]="input.name" aria-label="Default select example">
+                        <option value="" disabled selected>{{ input.placeholder }}</option>
+                        <option *ngFor="let option of input.options" [value]="option.value">{{ option.label }}</option>
+                    </select>
+                </div>
+                <div *ngIf="formLogin.get(input.name)?.invalid && formLogin.get(input.name)?.touched">
+                    <span class="text-error" *ngIf="formLogin.get(input.name)?.errors?.['required']">This field is
+                        required</span>
+                    <span class="text-error" *ngIf="formLogin.get(input.name)?.errors?.['email']">Invalid email
+                        format</span>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="modal-footer mt-4">
+            <button type="submit" class="btn btn-primary btn-block mb-3">Aceptar</button>
+        </div>
+    </div>
+</form>

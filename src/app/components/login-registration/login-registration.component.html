@@ -1,0 +1,49 @@
+<section class="background-radial-gradient overflow-hidden">
+    <div class="container px-2 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                    La mejor oferta<br />
+                    <span style="color: hsl(218, 81%, 75%)">Para tu negocio</span>
+                </h1>
+                <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                    Es un sistema diseñado para rentabilizar los esfuerzos comerciales de una organización, aumentar la
+                    productividad de sus agentes y, en consecuencia, maximizar sus ingresos.
+                </p>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+                <div class="card bg-glass">
+                    <div class="card-body px-4 py-5 px-md-5">
+                        <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" [class.active]="isLoginActive" id="tab-login"
+                                    (click)="changueForm('login')" role="tab" aria-controls="pills-login"
+                                    aria-selected="true" type="button">Iniciar Sesión</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" [class.active]="!isLoginActive" id="tab-register"
+                                    (click)="changueForm('register')" role="tab" aria-controls="pills-register"
+                                    aria-selected="false" type="button">Registrar</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div *ngIf="isLoginActive" class="tab-pane fade show active" id="pills-login"
+                                role="tabpanel" aria-labelledby="tab-login">
+                                <app-forms [ListForms]="this.ListInputLoginForm"
+                                    (formsValue)="getFormvalue($event)"></app-forms>
+                            </div>
+                            <div *ngIf="!isLoginActive" class="tab-pane fade show active" id="pills-register"
+                                role="tabpanel" aria-labelledby="tab-register">
+                                <app-forms [ListForms]="this.ListInputRegisterForm"
+                                    (formsValue)="getFormvalue($event)"></app-forms>
+                            </div>
+                        </div>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
