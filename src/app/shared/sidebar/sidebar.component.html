@@ -1,0 +1,60 @@
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <img src="../../../assets/images/logo.png" alt="Logo" width="40" height="40" />
+    </a>
+    <a class="navbar-brand tittleLetter" [routerLink]="'/home'">Agile Store</a>
+
+    <!-- <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li *ngFor="let item of listMenu; let i = index" class="nav-item dropdown"
+          [class.dropdown]="item.submenu && item.submenu.length > 0">
+          <a *ngIf="item.submenu && item.submenu.length > 0"
+            class="nav-link" [routerLink]="item.url"
+            id="navbarDropdown{{ i }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ item.title }}
+          </a>
+          <a *ngIf="!item.submenu || item.submenu.length === 0" class="nav-link"
+            [routerLink]="item.url">
+            {{ item.title }}
+          </a>
+          <ul *ngIf="item.submenu && item.submenu.length > 0" class="dropdown-menu"
+            [attr.aria-labelledby]="'navbarDropdown' + i">
+            <li *ngFor="let subItem of item.submenu" class="nav-item">
+              <a [routerLink]="subItem.url" class="nav-link">
+                {{ subItem.title }}
+              </a>
+            </li>
+          </ul>
+          
+        </li>
+      </ul>
+    </div> -->
+
+    <div class="d-flex align-items-center">
+      <div class="dropdown">
+        <a class="dropdown-toggle d-flex align-items-center hidden-arrow text-decoration-none" id="dropdownUser1"
+          role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img [src]="user?.user?.avatar || defaultImage" class="avatar" height="45" alt="User Avatar" loading="lazy" />
+          <span *ngIf="user?.user" class="mx-1 typeLetter" style="font-size: 18px">{{ user.user.nombre }}
+          </span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser1">
+          <li>
+            <a class="dropdown-item" type="button" [routerLink]="'/userProfile'">Mi Perfil</a>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li>
+            <a class="dropdown-item" (click)="logout()" type="button">Cerrar Sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+

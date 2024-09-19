@@ -1,0 +1,65 @@
+{
+  "menu": [
+    {
+      "id": "1",
+      "title": "Inicio",
+      "icon": "bi bi-house",
+      "url": "/home",
+      "submenu": []
+    },
+    {
+      "id": "2",
+      "title": "Pedidos",
+      "icon": "bi bi-clipboard-data",
+      "url": "/orders",
+      "submenu": []
+    },
+    {
+      "id": "3",
+      "title": "Mesas",
+      "icon": "bi bi-grid-1x2",
+      "url": "/tables",
+      "submenu": []
+    },
+    {
+      "id": "4",
+      "title": "Bodega",
+      "icon": "bi bi-archive",
+      "url": "/store",
+      "submenu": []
+    },
+    {
+      "id": "5",
+      "title": "Productos",
+      "icon": "bi bi-list-task",
+      "url": "/listProducts",
+      "submenu": []
+    },
+    {
+      "id": "6",
+      "title": "Menu del día",
+      "icon": "bi bi-list-task",
+      "url": "/todayMenu",
+      "submenu": []
+    },
+    {
+      "id": "7",
+      "title": "Otros",
+      "icon": "bi bi-card-checklist",
+      "submenu": [
+        {
+          "title": "Abiertas",
+          "icon": "bi bi-record-fill",
+          "url": "/configuracion/cuenta",
+          "submenu": []
+        },
+        {
+          "title": "Cerradas",
+          "icon": "bi bi-record-fill",
+          "url": "/configuracion/seguridad",
+          "submenu": []
+        }
+      ]
+    }
+  ]
+}
