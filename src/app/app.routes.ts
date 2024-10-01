@@ -15,7 +15,6 @@ export const routes: Routes = [
         component: LoginRegistrationComponent,
         canActivate: [],
     },
-    { path: '**', pathMatch: 'full', redirectTo: '/login' },
     {
         path: 'dashboard',
         component: DashboardComponent,
@@ -56,6 +55,7 @@ export const routes: Routes = [
                 canActivate: [AuthGuard],
             },
         ],
-
+        
     },
+    { path: '**', pathMatch: 'full', redirectTo: '' },
 ];

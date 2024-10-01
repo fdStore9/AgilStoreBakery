@@ -4,19 +4,24 @@
 <div class="d-flex" id="wrapper">
     <!-- Sidebar -->
     <div class="bg-dark border-dark" data-bs-theme="dark" id="sidebar-wrapper">
-        <div class="sidebar-heading" style="color: white;">Admin Menu </div>
-        <div class="list-group list-group-flush">
-            <a [routerLink]="'/home'" class="list-group-item list-group-item-action ">Inicio</a>
-            <!-- <a routerLink="/usuarios" class="list-group-item list-group-item-action">Usuarios</a>
+      <div class="sidebar-heading" style="color: white;">Admin Menu </div>
+      <div class="list-group list-group-flush">
+        <a [routerLink]="'/dashboard/home'" class="list-group-item list-group-item-action ">Inicio</a>
+        <a [routerLink]="'/dashboard/tables'" class="list-group-item list-group-item-action ">Mesas</a>
+        <a [routerLink]="'/dashboard/todayMenu'" class="list-group-item list-group-item-action ">Menu del dia</a>
+        <a [routerLink]="'/dashboard/listProducts'" class="list-group-item list-group-item-action ">Lista de productos</a>
+        <a [routerLink]="'/dashboard/store'" class="list-group-item list-group-item-action ">Bodega</a>
+        <a [routerLink]="'/dashboard/orders'" class="list-group-item list-group-item-action ">Ordenes</a>
+
         
         <a href="#submenuConfig" class="list-group-item list-group-item-action " data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="submenuConfig">
           Configuración
         </a>
         <div class="collapse" id="submenuConfig">
-          <a routerLink="/configuracion/opcion1" class="list-group-item list-group-item-action  pl-5">Opción 1</a>
-          <a routerLink="/configuracion/opcion2" class="list-group-item list-group-item-action  pl-5">Opción 2</a>
-        </div> -->
-        </div>
+          <a routerLink="/dashboard/store" class="list-group-item list-group-item-action  pl-5">Opción 1</a>
+          <a routerLink="/dashboard/orders" class="list-group-item list-group-item-action  pl-5">Opción 2</a>
+        </div> 
+      </div>
     </div>
 
 

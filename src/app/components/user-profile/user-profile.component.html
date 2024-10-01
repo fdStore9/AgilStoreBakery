@@ -1,1 +1,189 @@
-<p>user-profile works!</p>
+<div class="container emp-profile">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="profile-img">
+        <img
+          [src]="user.avatar || defaultImage"
+          alt="User Image"
+          class="img-fluid avatar p-3"
+        />
+        <hr />
+        <div class="file btn btn-md btn-primary">
+          Actualizar foto
+          <input type="file" name="file" (change)="onFileChange($event)" />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="profile-head">
+        <p class="typeLetter">{{ user.nombre + " " + user.apellido }}</p>
+        <h6>{{ user.rol }}</h6>
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              id="home-tab"
+              data-toggle="tab"
+              role="tab"
+              aria-controls="home"
+              aria-selected="true"
+              >Acerca de mí</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        (click)="editProfile()"
+        name="btnAddMore"
+      >
+        <i class="bi bi-pencil-square"></i> Editar
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="profile-work">
+        <p>Habilidades</p>
+        <div *ngFor="let skill of user.skills; let i = index">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              [id]="skill.id"
+              [(ngModel)]="user.skills[i].selected"
+              [name]="skill.id"
+            />
+            <label class="form-check-label" [for]="skill.id">
+              {{ skill.name }}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="tab-content profile-tab" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <div class="row">
+            <div class="col-md-6">
+              <label>Nombre Completo</label>
+            </div>
+            <div class="col-md-6">
+              <p>{{ (user.nombre || "") + " " + (user.apellido || "") }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Correo</label>
+            </div>
+            <div class="col-md-6">
+              <p>{{ user.email }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>N° Celular</label>
+            </div>
+            <div class="col-md-6">
+              <p *ngIf="!isEditing">
+                {{ user.phone ? user.phone : "No disponible" }}
+              </p>
+              <div *ngIf="isEditing" class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"
+                  ><i class="bi bi-telephone-plus"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="user.phone"
+                  placeholder="Celular"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Profesión</label>
+            </div>
+            <div class="col-md-6">
+              <p *ngIf="!isEditing">
+                {{ user.profesion ? user.profesion : "No disponible" }}
+              </p>
+              <div *ngIf="isEditing" class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="bi bi-filter-square"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Profesión"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  [(ngModel)]="user.profesion"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Fecha Nacimiento</label>
+            </div>
+            <div class="col-md-6">
+              <p *ngIf="!isEditing">
+                {{
+                  user.fechaNacimiento ? user.fechaNacimiento : "No disponible"
+                }}
+              </p>
+              <!-- <app-date-picker *ngIf="isEditing" [fechaNacimiento]="this.user.fechaNacimiento" (dateFormatted)="handleDateChange($event)"></app-date-picker> -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Experiencia</label>
+            </div>
+            <div class="col-md-6">
+              <p *ngIf="!isEditing">
+                {{ user.experience ? user.experience : "No disponible" }}
+              </p>
+              <div *ngIf="isEditing" class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="bi bi-arrows-expand"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Experiencia"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  [(ngMo
+                  del)]="user.experience"
+                />
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="modal-footer">
+            <button
+              type="button"
+              (click)="updateProfile()"
+              class="btn btn-success"
+            >
+              <i class="bi bi-floppy"></i> Guardar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

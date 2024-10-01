@@ -11,10 +11,12 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { provideStore } from '@ngrx/store';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
   provideRouter(routes),
+  provideHttpClient(),
   provideClientHydration(),
   importProvidersFrom(
     AngularFireModule.initializeApp(environment.firebaseConfig),
