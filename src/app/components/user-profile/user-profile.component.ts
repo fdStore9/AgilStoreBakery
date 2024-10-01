@@ -5,7 +5,6 @@ import { Store } from '@ngrx/store';
 import { UploadFilesService } from '../../services/upload-files.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AppState } from '../../app.reducer';
-import * as ui from '../../shared/ui.actions';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -36,14 +35,14 @@ export class UserProfileComponent {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(ui.isLoading());
+    // this.store.dispatch(ui.isLoading());
     this.user$.subscribe((user: any) => {
       if (user.user) {
         this.user = { ...user.user };
         this.user.skills = this.user.skills.map(skill => ({ ...skill }));
         this.user.avatar = this.user.avatar || this.defaultImage;
         this.handleDateChange(this.user.fechaNacimiento as any);
-        this.store.dispatch(ui.stopLoading());
+        // this.store.dispatch(ui.stopLoading());
       } else {
         this.user = new Usuario();
       }
@@ -92,7 +91,7 @@ export class UserProfileComponent {
     this.isEditing = !this.isEditing;
   }
   async updateProfile() {
-    this.store.dispatch(ui.isLoading());
+    // this.store.dispatch(ui.isLoading());
     if (this.user) {
       if (this.file) {
         await this.fileUpload.uploadFile(this.file, this.user.nombre).then(rs => {
@@ -103,7 +102,7 @@ export class UserProfileComponent {
       await this.fileUpload.updateDocument('profiles', this.user.uid, this.user).then((rs) => {
         (rs);
       })
-      this.store.dispatch(ui.stopLoading());
+      // this.store.dispatch(ui.stopLoading());
       this.isEditing = false; // Salir del modo edición después de guardar
     }
   }

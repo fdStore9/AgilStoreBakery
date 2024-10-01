@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage'; // Compatibilidad con versión de AngularFire
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'; // Versión modular
-import { Usuario } from '../models/usuario.model';
+
 import * as authActions from '../shared/auth.actions';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.reducer';
 import { Observable } from 'rxjs';
+import { Usuario } from '../models/usuarios.models';
 
 @Injectable({
   providedIn: 'root'
