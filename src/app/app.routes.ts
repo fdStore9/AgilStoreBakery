@@ -57,5 +57,5 @@ export const routes: Routes = [
         ],
         
     },
-    { path: '**', pathMatch: 'full', redirectTo: '' },
+    { path: '**', pathMatch: 'full', redirectTo: 'login' },
 ];

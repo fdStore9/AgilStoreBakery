@@ -12,10 +12,12 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { provideStore } from '@ngrx/store';
 import { provideHttpClient } from '@angular/common/http';
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
   provideRouter(routes),
+  provideCharts(withDefaultRegisterables()),
   provideHttpClient(),
   provideClientHydration(),
   importProvidersFrom(

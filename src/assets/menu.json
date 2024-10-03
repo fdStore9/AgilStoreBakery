@@ -4,59 +4,59 @@
       "id": "1",
       "title": "Inicio",
       "icon": "bi bi-house",
-      "url": "/home",
+      "url": "/dashboard/home",
       "submenu": []
     },
     {
       "id": "2",
-      "title": "Pedidos",
-      "icon": "bi bi-clipboard-data",
-      "url": "/orders",
+      "title": "Mesas",
+      "icon": "bi bi-grid-1x2",
+      "url": "/dashboard/tables",
       "submenu": []
     },
     {
       "id": "3",
-      "title": "Mesas",
-      "icon": "bi bi-grid-1x2",
-      "url": "/tables",
+      "title": "Menu del día",
+      "icon": "bi bi-list-task",
+      "url": "/dashboard/todayMenu",
       "submenu": []
     },
     {
       "id": "4",
-      "title": "Bodega",
-      "icon": "bi bi-archive",
-      "url": "/store",
+      "title": "Lista de productos",
+      "icon": "bi bi-list-task",
+      "url": "/dashboard/listProducts",
       "submenu": []
     },
     {
       "id": "5",
-      "title": "Productos",
-      "icon": "bi bi-list-task",
-      "url": "/listProducts",
+      "title": "Bodega",
+      "icon": "bi bi-archive",
+      "url": "/dashboard/store",
       "submenu": []
     },
     {
       "id": "6",
-      "title": "Menu del día",
-      "icon": "bi bi-list-task",
-      "url": "/todayMenu",
+      "title": "Ordenes",
+      "icon": "bi bi-clipboard-data",
+      "url": "/dashboard/orders",
       "submenu": []
     },
     {
       "id": "7",
-      "title": "Otros",
+      "title": "Configuración",
       "icon": "bi bi-card-checklist",
       "submenu": [
         {
-          "title": "Abiertas",
+          "title": "Opción 1",
           "icon": "bi bi-record-fill",
-          "url": "/configuracion/cuenta",
+          "url": "/dashboard/store",
           "submenu": []
         },
         {
-          "title": "Cerradas",
+          "title": "Opción 2",
           "icon": "bi bi-record-fill",
-          "url": "/configuracion/seguridad",
+          "url": "/dashboard/orders",
           "submenu": []
         }
       ]

@@ -1,0 +1,22 @@
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    font-size: 2rem;
+    color: #6c757d;
+}
+
+h6 {
+    font-weight: 600;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+small {
+    display: block;
+    margin-top: 10px;
+}

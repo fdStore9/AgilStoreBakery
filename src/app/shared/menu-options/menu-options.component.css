@@ -1,0 +1,32 @@
+/* app.component.css */
+
+/* Estilo básico para el sidebar */
+#wrapper {
+    display: flex;
+    width: 100%;
+  }
+  
+  #sidebar-wrapper {
+    width: 250px;
+  }
+  
+  #page-content-wrapper {
+    flex: 1;
+  }
+  
+  .collapse.show {
+    display: block !important;
+  }
+  
+  .sidebar-heading {
+    padding: 0.75rem 1.25rem;
+    font-size: 1.2rem;
+  }
+  
+  .list-group-item {
+    padding-left: 1.5rem;
+  }
+  
+  .pl-5 {
+    padding-left: 2rem !important;
+  }

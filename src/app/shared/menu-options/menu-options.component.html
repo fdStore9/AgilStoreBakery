@@ -1,0 +1,28 @@
+<div class="bg-dark border-dark" data-bs-theme="dark" id="sidebar-wrapper" style="height: 100%;">
+    <div class="sidebar-heading" style="color: white;">Admin Menu</div>
+    <div class="list-group list-group-flush">
+        <ng-container *ngFor="let item of listMenu; trackBy: trackByFn">
+            <a *ngIf="!item.submenu || item.submenu.length === 0" 
+               [routerLink]="item.url" 
+               class="list-group-item list-group-item-action">
+                {{item.title}}
+            </a>
+            <a *ngIf="item.submenu && item.submenu.length > 0" 
+               href="#submenu{{item.id}}" 
+               class="list-group-item list-group-item-action" 
+               data-bs-toggle="collapse" 
+               role="button" 
+               aria-expanded="false" 
+               [attr.aria-controls]="'submenu' + item.id">
+                {{item.title}}
+            </a>
+            <div class="collapse" [id]="'submenu' + item.id">
+                <ng-container *ngFor="let subItem of item.submenu; trackBy: trackByFn">
+                    <a [routerLink]="subItem.url" class="list-group-item list-group-item-action pl-5">
+                        {{subItem.title}}
+                    </a>
+                </ng-container>
+            </div>
+        </ng-container>
+    </div>
+</div>
